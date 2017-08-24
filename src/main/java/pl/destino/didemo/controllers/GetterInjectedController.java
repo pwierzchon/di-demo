@@ -5,6 +5,8 @@
  */
 package pl.destino.didemo.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import pl.destino.didemo.services.GreetingService;
 import pl.destino.didemo.services.GreetingServiceImpl;
 
@@ -14,14 +16,16 @@ import pl.destino.didemo.services.GreetingServiceImpl;
  *
  * @author Destino
  */
+@Controller
 public class GetterInjectedController {
 
     private GreetingService greetingService;
 
-    String sayHello() {
+    public String sayHello() {
         return greetingService.sayGreeting();
     }
 
+    @Autowired
     public void setGreetingService(GreetingServiceImpl greetingService) {
         this.greetingService = greetingService;
     }

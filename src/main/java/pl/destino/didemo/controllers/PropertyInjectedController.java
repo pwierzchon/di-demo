@@ -1,5 +1,7 @@
 package pl.destino.didemo.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import pl.destino.didemo.services.GreetingServiceImpl;
 
 /**
@@ -8,14 +10,14 @@ import pl.destino.didemo.services.GreetingServiceImpl;
  *
  * @author Destino
  */
-public class PropertyInjectedController  {
+@Controller
+public class PropertyInjectedController {
 
+    @Autowired
     public GreetingServiceImpl greetingService;
 
-    String sayHello() {
+    public String sayHello() {
         return greetingService.sayGreeting();
     }
-
-
 
 }

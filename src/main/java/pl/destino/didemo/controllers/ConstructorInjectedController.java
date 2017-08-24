@@ -5,6 +5,7 @@
  */
 package pl.destino.didemo.controllers;
 
+import org.springframework.stereotype.Controller;
 import pl.destino.didemo.services.GreetingService;
 import pl.destino.didemo.services.GreetingServiceImpl;
 
@@ -12,6 +13,7 @@ import pl.destino.didemo.services.GreetingServiceImpl;
  *
  * @author Destino
  */
+@Controller
 public class ConstructorInjectedController {
 
     private GreetingService greetingService;
@@ -21,7 +23,7 @@ public class ConstructorInjectedController {
     }
 
     
-    String sayHello() {
+    public String sayHello() {
         return greetingService.sayGreeting();
     }
 
