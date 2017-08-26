@@ -1,5 +1,6 @@
 package pl.destino.didemo.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import pl.destino.didemo.services.GreetingService;
 
@@ -10,6 +11,7 @@ import pl.destino.didemo.services.GreetingService;
 @Controller
 public class MyController {
 
+    @Autowired
     private GreetingService greetingService;
 
     public MyController(GreetingService greetingService) {
