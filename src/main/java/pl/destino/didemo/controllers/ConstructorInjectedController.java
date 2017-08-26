@@ -5,6 +5,7 @@
  */
 package pl.destino.didemo.controllers;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import pl.destino.didemo.services.GreetingService;
 import pl.destino.didemo.services.GreetingServiceImpl;
@@ -18,7 +19,7 @@ public class ConstructorInjectedController {
 
     private GreetingService greetingService;
 
-    public ConstructorInjectedController(GreetingService greetingService) {
+    public ConstructorInjectedController(@Qualifier("constructorGreetingService") GreetingService greetingService) {
         this.greetingService = greetingService;
     }
 

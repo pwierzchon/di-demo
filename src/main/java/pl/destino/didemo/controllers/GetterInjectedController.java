@@ -6,6 +6,7 @@
 package pl.destino.didemo.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import pl.destino.didemo.services.GreetingService;
 import pl.destino.didemo.services.GreetingServiceImpl;
@@ -26,7 +27,7 @@ public class GetterInjectedController {
     }
 
     @Autowired
-    public void setGreetingService(GreetingServiceImpl greetingService) {
+    public void setGreetingService(@Qualifier("getterGreetingService") GreetingService greetingService) {
         this.greetingService = greetingService;
     }
 
